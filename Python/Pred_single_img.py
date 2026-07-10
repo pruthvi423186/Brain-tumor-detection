@@ -1,17 +1,17 @@
 from ultralytics import YOLO
 
 # Load a model
-model = YOLO(r"D:\Downloads\runs\detect\runs\train\yolo26n_custom\weights\best.pt")  # pretrained YOLO26n model
+model = YOLO(r"best.pt")  
 
 # Run batched inference on a list of images
-results = model(["D:\Downloads\image1.jpg"], stream=True)  # return a generator of Results objects
+results = model(["image1.jpg"], stream=True)  
 
 # Process results generator
 for result in results:
-    boxes = result.boxes  # Boxes object for bounding box outputs
-    masks = result.masks  # Masks object for segmentation masks outputs
-    keypoints = result.keypoints  # Keypoints object for pose outputs
-    probs = result.probs  # Probs object for classification outputs
-    obb = result.obb  # Oriented boxes object for OBB outputs
-    result.show()  # display to screen
-    result.save(filename="result.jpg")  # save to disk
+    boxes = result.boxes  
+    masks = result.masks  
+    keypoints = result.keypoints  
+    probs = result.probs 
+    obb = result.obb  
+    result.show()  
+    result.save(filename="result.jpg") 
