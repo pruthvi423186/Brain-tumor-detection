@@ -1,7 +1,7 @@
 from ultralytics import YOLO
 
 # Load a model
-model = YOLO(r"best.pt")  
+model = YOLO("best.pt")  
 
 # Run batched inference on a list of images
 results = model(["image1.jpg"], stream=True)  
