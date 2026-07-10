@@ -3,11 +3,11 @@ import os
 from ultralytics import YOLO
 
 # ---- Config ----
-MODEL_PATH = r"D:\Downloads\runs\detect\runs\train\yolo26n_custom\weights\best.pt"
-TEST_DIR = r"D:\Datasets\Data\test\images"
-OUTPUT_DIR = r"D:\Datasets\Data\test\predictions"  # where annotated results get saved
-NUM_IMAGES = 428          # minimum number of images to test
-BATCH_SIZE = 8           # tune based on your RTX 2050 VRAM (4GB) -> lower if OOM
+MODEL_PATH = "best.pt"
+TEST_DIR = r"test\images"
+OUTPUT_DIR = r"test\predictions"  
+NUM_IMAGES = 428         
+BATCH_SIZE = 8           
 CONF_THRESH = 0.70       # confidence threshold for predictions
 
 os.makedirs(OUTPUT_DIR, exist_ok=True)
