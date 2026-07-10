@@ -4,8 +4,8 @@ from ultralytics import YOLO
 
 # ---- Config ----
 MODEL_PATH = "best.pt"
-TEST_DIR = r"test\images"
-OUTPUT_DIR = r"test\predictions"  
+TEST_DIR = "Path to test images"
+OUTPUT_DIR = "Path to save predicted images"  
 NUM_IMAGES = 428         
 BATCH_SIZE = 8           
 CONF_THRESH = 0.70       # confidence threshold for predictions
