@@ -8,22 +8,22 @@ import matplotlib.pyplot as plt
 from ultralytics import YOLO, SAM
 
 # ---- Config ----
-DETECTION_MODEL_PATH = r"D:\Downloads\runs\detect\runs\train\yolo26n_custom\weights\best.pt"
+DETECTION_MODEL_PATH = "best.pt"
 SEG_MODEL_PATH = "mobile_sam.pt"   # swap to "sam2_t.pt" if you want more precise masks (slower, more VRAM)
 
-TEST_DIR = r"D:\Datasets\Data\test\images"
-OUTPUT_DIR = r"D:\Datasets\Data\test\seg_predictions"
+TEST_DIR = r"test\images"
+OUTPUT_DIR = r"test\seg_predictions"
 NUM_IMAGES = 428
 CONF_THRESH = 0.70
 
-MASK_COLOR = (0, 255, 255)   # cyan overlay for the segmented tumor region
-MASK_ALPHA = 0.4             # overlay transparency
+MASK_COLOR = (0, 255, 255)   
+MASK_ALPHA = 0.4             
 
 os.makedirs(OUTPUT_DIR, exist_ok=True)
 
 # ---- Load models ----
-det_model = YOLO(DETECTION_MODEL_PATH)   # your custom trained tumor detector
-seg_model = SAM(SEG_MODEL_PATH)          # pretrained, class-agnostic segmenter
+det_model = YOLO(DETECTION_MODEL_PATH)   
+seg_model = SAM(SEG_MODEL_PATH)          
 
 # ---- Collect test images ----
 exts = ("*.jpg", "*.jpeg", "*.png", "*.bmp")
@@ -41,8 +41,8 @@ else:
 print(f"Running detection + segmentation on {len(image_paths)} images...\n")
 
 # ---- Analytics accumulators ----
-class_counts = defaultdict(int)          # total detections per class (for pie/bar)
-running_counts = defaultdict(list)       # cumulative count per class over image index (for area chart)
+class_counts = defaultdict(int)         
+running_counts = defaultdict(list)       
 cumulative = defaultdict(int)
 all_class_names = set()
 
