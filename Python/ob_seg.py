@@ -8,13 +8,13 @@ import matplotlib.pyplot as plt
 from ultralytics import YOLO, SAM
 
 # ---- Config ----
-DETECTION_MODEL_PATH = "best.pt"
+DETECTION_MODEL_PATH = "Path_to_your_best.pt"
 SEG_MODEL_PATH = "mobile_sam.pt"   # swap to "sam2_t.pt" if you want more precise masks (slower, more VRAM)
 
-TEST_DIR = r"test\images"
-OUTPUT_DIR = r"test\seg_predictions"
-NUM_IMAGES = 428
-CONF_THRESH = 0.70
+TEST_DIR = "Path to test images"
+OUTPUT_DIR = "Path to save images"
+NUM_IMAGES = 428 # no of images for prediction
+CONF_THRESH = 0.70 
 
 MASK_COLOR = (0, 255, 255)   
 MASK_ALPHA = 0.4             
