@@ -4,15 +4,15 @@ from ultralytics import YOLO
 
 def main():
     experiment = start(
-        api_key="hUCj6h5fuoZYtclQwhHDxIpWD",
+        api_key="YOUR_API_KEY",
         project_name="brain-tumor",
-        workspace="pruthvi423186"
+        workspace="WORKSPACE_NAME"
     )
 
     model = YOLO("yolo26n.pt")
 
     model.train(
-        data="D:\\Datasets\\Data\\data.yaml",
+        data="data.yaml",
         epochs=150,
         patience=50,
         imgsz=640,
